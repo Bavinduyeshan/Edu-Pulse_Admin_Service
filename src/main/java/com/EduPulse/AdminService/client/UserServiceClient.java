@@ -40,5 +40,11 @@ public interface UserServiceClient {
     void verifyLecturer(@PathVariable("id") Long id, @RequestParam boolean approve);
 
     @PutMapping("/api/users/{id}/ban")
-    void toggleBan(@PathVariable("id") Long id, @RequestParam boolean ban, @RequestParam String reason);
+    void toggleBan(
+            @PathVariable("id") Long id,
+            @RequestParam("ban") boolean ban,
+            @RequestParam("reason") String reason,
+            @RequestParam("adminId") Long adminId
+    );
+
 }

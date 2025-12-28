@@ -41,8 +41,15 @@ public class AdminUserController {
     }
 
     @PutMapping("/{id}/ban")
-    public ResponseEntity<Void> toggleBan(@PathVariable Long id, @RequestParam boolean ban, @RequestParam String reason) {
-        adminUserService.toggleBan(id, ban, reason);
+    public ResponseEntity<Void> toggleBan(
+            @PathVariable Long id,
+            @RequestParam boolean ban,
+            @RequestParam String reason,
+            @RequestParam Long adminId   // ✅ CHANGE HERE
+    ) {
+        adminUserService.toggleBan(id, ban, reason, adminId);
         return ResponseEntity.ok().build();
     }
+
+
 }

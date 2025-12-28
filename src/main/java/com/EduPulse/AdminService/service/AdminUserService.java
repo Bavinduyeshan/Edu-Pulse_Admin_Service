@@ -31,7 +31,8 @@ public class AdminUserService {
         userClient.verifyLecturer(lecturerId, approve);
     }
 
-    public void toggleBan(Long userId, boolean ban, String reason) {
-        userClient.toggleBan(userId, ban, reason);
+    public void toggleBan(Long userId, boolean ban, String reason, Long adminId) {
+        userClient.toggleBan(userId, ban, reason, adminId);
     }
+
 }

@@ -1,6 +1,7 @@
 package com.EduPulse.AdminService.dto;
 
 
+import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.Data;
 
 import java.time.LocalDate;
@@ -23,4 +24,14 @@ public class UserResponse {
     private boolean isVerified;
     private String profilePictureUrl;
     private LocalDateTime createdAt;
+    // Add these fields
+
+    @JsonProperty("isBanned")
+    private boolean isBanned;
+    private String banReason;
+    private LocalDateTime bannedAt;
+
+
+
+
 }
